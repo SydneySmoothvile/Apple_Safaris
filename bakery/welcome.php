@@ -16,123 +16,133 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
 		body{ font: 22px sans-serif; 
 			text-align: center;
+            background-image: url("images/splash6.jpg");
+            background-size: cover;
 		 }
-		 .menu-items{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-}
-.header{
+
+header{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding : 1rem 2rem;
+    width: 100%;
+    height: 60px;
     background-color: rebeccapurple;
-    overflow: hidden;
 }
-.menu-items{
+header p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    line-height: 55px;
+    font-size: 24px;
+    /* float: left; */
+    float: right;
+    padding: 0 20px;
+}
+header ul{
+    /* float: left; */
+    float: right;
+    margin-right: 130px;
+}
+header ul li{
+    /* float: left; */
+    float: right;
     list-style: none;
-    display: flex;
-    align-items: center;
+    position: relative;
 }
-.menu-items li a{
-    font-size: 16px;
-    padding:0.5em 1em;
-    text-align: center;
+header ul li a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: block;
+    font-size: 14px;
+    padding: 22px 14px;
+    text-decoration: none;   
 }
-header a{
-    font-size: 16px;
-    color: rgb(224, 202, 235);
+header ul li ul{
+    display: none;
+    position: absolute; 
+    background-color: #ffffff;
+    border-radius: 0 0 4px 4px;
+}
+header ul li:hover ul{
+    display: block;
+    
+}
+header ul li ul li{
+    width: 180px;
+    border-radius: 4px;
+}
+header ul li ul li a{
+    padding: 8px 14px;
+}
+header ul li ul li a:hover{
+    background-color: #f3f3f3;
+}
+.sidebar{
+    position: fixed;
+    width: 300px;
+    top:0;
+    left: 0;
+    bottom: 0;
+    background-color: brown;
+    padding-top: 50px;
+}
+.sidebar h1{
+    display: block;
     text-decoration: none;
-    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    font-family: "Rubik";
 }
-header a:hover{
-    background-color: rgb(223, 208, 240);
+.sidebar a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    font-family: "Rubik";
 }
-.dropdown {
-  float: left;
-  overflow: hidden;
-  cursor: pointer;
+.sidebar a:hover{
+    margin-left: 20px;
+    transition: 0.4s;
+    color: rebeccapurple;
 }
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-/* Add a red background color to navbar links on hover */
- .dropdown:hover .dropbtn {
-  background-color: red;
-}
+
     </style>
 </head>
 <body>
     <header class="header">
-        <a href="#">APPLE SAFARIS HOTEL</a>
-        <ul class="menu-items">
-            
-            <li><a href="#" class="menu-items">HOME</a></li>
-            <li><a href="#" class="menu-items">PRODUCTS</a></li>
-            <li><a href="#" class="menu-items">ABOUT</a></li>
-            <li><a href="#" class="menu-items">CONTACTS</a></li>
+        
+        <ul>
+            <li><a href="#" class="menu-items">MORE |</a>
+                <ul>
+                <li><a href="delete_food.php" class="menu-items">Delete Food</a></li>
+                    <li><a href="logout.php" class="menu-items">Logout</a></li>
+                </ul>
+            </li>
             <li> <a><?php echo htmlspecialchars($_SESSION["username"]); ?></a></li>
-            <div class="dropdown">
-                    <button class="dropbtn">More
-                     <i class="fa fa-caret-down"></i>
-                    </button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-            <li><a href="profile.php" class="menu-items">PROFILE</a></li>
-            <li><a href="edituser.php" class="menu-items">UPDATE</a></li>
-            <li><a href="delete.php" class="menu-items">DELETE</a></li>
-            <li><a href="logout.php" class="menu-items">LOGOUT</a></li>
         </ul>
     </header>
-
-    <div>
-        <img src="images/splash6.jpg" alt="" width="100%" height="1000px">
+    <div class="sidebar">
+        <h1>APPLE SAFARIS HOTEL</h1>
+        <ul>
+                <ul>
+                    <li><a href="profile.php" class="menu-items">Profile</a></li>
+                    <li><a href="edituser.php" class="menu-items">Update user</a></li>
+                    <li><a href="delete.php" class="menu-items">Delete user</a></li>
+                    <li><a href="menu-list.php" class="menu-items">Menu</a></li>
+                    <li><a href="add_food.php" class="menu-items">Add food</a></li>
+                    <li><a href="update_food.php" class="menu-items">Update food</a></li>
+                    <li><a href="users.php" class="menu-items">Users</a></li>
+                    <li><a href="view_order.php" class="menu-items">Orders</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+
 </body>
 </html>
 
@@ -140,88 +150,7 @@ header a:hover{
 
 require_once("db_connect.php");
 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
 ?>
 
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Table From Database</title>
-	<style type="text/css">
 
-		table{
-			
-			border-collapse: collapse;
-			width: 30%;
-			font-family: monospace;
-			background-color: grey;
-			text-align: left;
-		}
-		th{
-			background-color: #588c7e;
-			color: white;
-			
-		}
-		tr:nth-child(even){
-			background-color: #f2f2f2;
-		}
-		.omg{
-			box-sizing: border-box;
-            width: 1000px; padding: 20px;
-             
-  	        background-color: #ffffff;
-  	       
-  	        margin: 100px auto; 
-		}
-		
-
-	</style>
-</head>
-<body>
-	<div class="omg">
-	    <table>
-		<h1>DATA ON USERS</h1>
-		<tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Second Name</th>
-            <th>Email</th>
-			<th>Username</th>
-            <th>Password</th>
-            <th>Choice</th>
-		</tr>
-
-
-<?php
-$sql = "SELECT id,first_name,second_name,email, username, `password`,choice FROM user";
-
-$result = mysqli_query($link, $sql);
-
-   if(! $result ) {
-      die("Could not get data: ".mysqli_error($link));
-   }
-   
-   while($row = mysqli_fetch_assoc($result)) {
-      echo "
-      		<tr>
-                  <td>".$row["id"]. "</td>
-                  <td>".$row["first_name"]. "</td>
-                  <td>".$row["second_name"]. "</td>
-                  <td>".$row["email"]. "</td>
-      			<td>" .$row["username"]. "</td>
-                  <td>".$row["password"] . "</td>
-                  <td>".$row["choice"]. "</td>
-      		</tr>" ;
-   }
-   
-   echo "Fetched data successfully\n";
-   
-   mysqli_close($link);
-?>
-		</table>
-	</div>
-	</body>
 </html>
