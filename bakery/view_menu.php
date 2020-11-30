@@ -39,18 +39,21 @@ echo "</pre>";
 </head>
 <body>
 	<div class="omg">
+	<a><?php session_start(); echo htmlspecialchars($_SESSION["username"]); ?>
+		<a href="welcome.php">Home</a>
 	    <table>
 		    <h1>DATA ON USERS</h1>
 		        <tr>
 			        <th>Food_id</th>
 			        <th>food_item</th>
 			        <th>food_image</th>
-                    <th>food_price</th>
+					<th>food_price</th>
+					<th>food_type</th>
 		        </tr>
 
 
             <?php
-            $sql = "SELECT food_id, food_item,food_image,food_price FROM food";
+            $sql = "SELECT food_id, food_item,food_image,food_price,food_type FROM food";
 
             $result = mysqli_query($link, $sql);
 
@@ -64,20 +67,22 @@ echo "</pre>";
       			<td>".$row["food_id"]. "</td>
       			<td>" .$row["food_item"]. "</td>
                   <td>".$row["food_image"] . "</td>
-                  <td>".$row["food_price"] . "</td> 
+				  <td>".$row["food_price"] . "</td> 
+				  <td>".$row["food_type"] . "</td> 
       		</tr>" ;
              }
    
             echo "Fetched data successfully\n";
    
-            mysqli_close($link);
             ?>
 		</table>
     </div>
 
     <div class="time">
         <p>Pizza Burrito</p>
-        <img src="<?php echo $row["food_image"];?>" height="100" width="100">
+		<img src="<?php echo $row["food_image"]; mysqli_close($link);?>" alt="pizza should be displayed here" height="100" width="100">
+		
+		
     </div>
 	</body>
 </html>

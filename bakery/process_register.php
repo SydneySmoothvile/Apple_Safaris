@@ -40,10 +40,22 @@ if (mysqli_query($link,$sql)){
 else{
 	echo "Record not deleted".$link->error;
 }
+
+if (isset($_POST['delete_food'])){
+
+	$food_id=$_POST['food_id'];
+	$sq="DELETE FROM food WHERE food_id = '$food_id'";
+	
+	if (mysqli_query($link,$sq)){
+		echo "Record Deleted successfully";
+	}
+	else{
+		echo "Record not deleted".$link->error;
+	}
 }
 
-		if(isset($_POST['back'])){
-			header("location:login.php");
-		}
-	
+if(isset($_POST['back'])){
+	header("location:login.php");
+}
+}	
 ?>
