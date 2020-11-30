@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Safaris</title>
     <link rel="stylesheet" href="index.css">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
 
     <header class="header">
-        <a href="#">APPLE SAFARIS HOTEL</a>
+        <a><p>APPLE SAFARIS HOTEL</p></a>
         <ul class="menu-items">
             
             <li><a href="#" class="menu-items">HOME</a></li>
@@ -112,57 +112,29 @@
         <h1>UNFORGETTABLE EXPERIENCES AT APPLE</h1>
         <img class="oop" src="images/splash11.jpg" alt="">
 
-
-        <div class="trust">
-            
-                <div class="one">
-                    <h1>FIND US AT</h1>
-                </div>
-                <div class="two">
-                    <p>Facebook</p>
-                    <p>Apples Hotel Resort</p>
-                </div>
-                <div class="three">
-                    <p>Twitter</p>
-                    <p>@applesresort</p>
-                </div>
-                <div class="four">
-                    <p>instagram</p>
-                    <p>@applesresort</p>
-                </div>
-                <div class="five">
-                    <p>pinterest</p>
-                    <p>resort_apple</p>
-                </div>
-                <div class="six">
-                    <p>youtube</p>
-                    <p>Apple Safaris</p>
-                </div>
-            
-        </div>
-    
-    
-        <div class="footer">
-            <div class="tense">
-
-                <div class="him">
-                    <ul>Accomodation</ul>
-                    <ul>Meetings</ul>
-                    <ul>Restaurant&Bars</ul>
-                </div>
-
-                <div class="her">
-                    <ul><a href="#">Tours & Travel</a></ul>
-                    <ul>Gallery</ul>
-                </div>
-
-                <div class="you">
-                    <ul>Career</ul>
-                    <ul>Privacy Policy</ul>
-                </div>
-            </div>
-        </div>
     </div>
+
+    <footer>
+        <div class="followus">
+			<p class="fus">FOLLOW US:</p>
+		</div>
+		<div class="">
+			<a href="https://web.facebook.com/?_rdc=1&_rdr" class="fa fa-facebook"></a>
+                        <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                        <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+                        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+		</div>
+		<div class="contactus">
+			<p class="cus">CONTACT US:</p>
+			<p>0793333000</p>
+			<p>applesafaris@gmail.com</p>
+		</div>
+		<div class="copyright">
+			<p>All Rights Reserved</p>
+			<p>&copy; 2020</p>
+        </div>
+
+    </footer>
 
 </body>
 </html>
